@@ -1,5 +1,6 @@
 
 
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="ModeloVO.VehiculoVO"%>
 <%@page import="ModeloDAO.VehiculoDAO"%>
@@ -11,7 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        
         <title>JSP Page</title>
     </head>
     <body background="img/cars.jpg">
@@ -35,8 +37,9 @@
             <div style="color: red">${mensajeError}</div>
             <%} else {%>
             <div style="color: cyan">${mensajeExito}</div>
-            <%}%>
         </div>
+        <%}%>
+    </div>
         <div class="conv ">
             <br>
            
@@ -61,6 +64,10 @@
                             vehVO = listaVehiculos.get(i);
 
                     %>
+                    
+                  
+           
+                    
                     <tr>
                         <td><%=vehVO.getVehPlaca()%></td>
                         <td><%=vehVO.getDatId()%></td>
@@ -73,21 +80,38 @@
 
                     </tr>
                     <%}%>
-                </table>
+                    </table>
+
+            </form>
+            <br>
+
+            <form method="post" action="GenerarPdf.jsp" target="_blank" >
+                <input type="submit" value="Generar reporte">
+                <input type="hidden" value="ReporteVehiculos.jasper" name="nombreReporte">  
+            </form>
+            
+            
+                    
+               
                 <br>     
-                <form action="consultarVehiculo.jsp">
+                <form action="registrarVehiculo.jsp">
                     <input  class="btn btn-outline-danger" type="submit" name="accion" 
                             value="Menu" >   
                 </form>
+              
+                <form method="post" action="GenerarParametro.jsp" target="_blank">
+            <select name="estado">
 
+                <option value="Nuevo">Nuevo</option>
+                <option value="Usado">Usado</option>
 
-                <br>
-                <form action="registrarVehiculo.jsp">
-                    <input  class="btn btn-outline-warning" type="submit" name="accion" 
-                            value="Volver" >
-                </form>
-                </form> 
-        </div>
+            </select>
+            <input type="submit" value="Generar reporte">
+            
+            <input type="hidden" value="VehiculoEstado.jasper" name="nombreReporte">
+        </form>
+                
+       
     </center>
 </body>              
 </html>

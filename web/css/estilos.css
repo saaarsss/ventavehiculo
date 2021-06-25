@@ -85,13 +85,13 @@ body {
       border-radius: 30px;
     padding: 4px;
     margin-top: -50px;
-    height: 415px;
+    height: 455px;
     background-color: #EBF5FB;
     opacity: .95;
     padding: 0 20px;
     box-shadow: 5px 5px 10px hsl(5, 5%, 52%);
     margin-left: 80px; 
-    width: 600px;
+    width: 30px;
 }
 
 .actv{

@@ -44,8 +44,7 @@
                                 CategoriaDAO catDAO = new CategoriaDAO();
                                 for (CategoriaVO catVO : catDAO.listar()) {
                             %>
-                            <option value="<%=catVO.getCatId()%>"><%=catVO.getCatTipo()%></option>
-                            <%}%>
+                            <option value="<%=catVO.getCatId()%>"><%=catVO.getCatTipo()%></option><%}%>
                             <br>
                         </select>
                         <br><br>MODELO<br>
